@@ -69,6 +69,36 @@
         </td>
     </tr>
 
+
+    </tbody>
+
+
+
+
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th>Teacher Name</th>
+            <th>Class Level</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+
+    <tr th:each="teacher : ${all_teachers}">
+
+        <td th:text="${teacher.teacher_name}">
+
+        </td>
+
+        <td th:text="${teacher.class_level}">
+
+        </td>
+    </tr>
+
     </tbody>
 
 </table>

@@ -50,5 +50,36 @@
 
 <h2>Register</h2>
 
+
+
+
+
+<h3>User Details</h3>
+
+
+<div class="container">
+    <form method="post" th:action="@{/api/save/user}">
+
+        <input class="form-control" name="first_name" type="text" placeholder="First Name">
+
+        <input class="form-control" name="email" type="email" placeholder="email">
+
+
+        <input class="form-control" name="age" type="number" placeholder="age">
+
+
+        <input class="form-control" name="password" type="password" placeholder="password">
+
+
+        <button class="btn btn-primary" type="submit">Register</button>
+
+
+
+
+    </form>
+</div>
+
+
+
 </body>
 </html>
