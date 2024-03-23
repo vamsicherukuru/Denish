@@ -55,5 +55,27 @@ public class HomeController {
         return "login";
     }
 
+    @GetMapping("/add-student")
+    public String addStudentPage(){
+        return "add-student";
+    }
+
+    @GetMapping("/student-list")
+    public String studentListPage(Model student_list){
+
+//        for (MyStudent myStudent : StudentAPI.all_student_repo) {
+//            System.out.println(myStudent);
+//        }
+
+        System.out.println(StudentAPI.getMyStudentList());
+
+        student_list.addAttribute("student_list",StudentAPI.getMyStudentList());
+
+
+        return "student-list";
+    }
+
+
+
 
 }
