@@ -1,2 +1,18 @@
 server:
   port: 8000
+
+
+
+
+spring:
+  datasource:
+    name: denish_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/denish_db
+    username: root
+    password: 12345678
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update

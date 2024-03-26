@@ -55,6 +55,17 @@ public class HomeController {
         return "login";
     }
 
+
+
+    @GetMapping("/add-product")
+    public String addProductPageView(){
+
+
+        return "add-product";
+    }
+
+
+
     @GetMapping("/add-student")
     public String addStudentPage(){
         return "add-student";
@@ -75,6 +86,13 @@ public class HomeController {
         return "student-list";
     }
 
+
+
+    @GetMapping("/add-to-cart")
+    public String addToCartPage(){
+
+        return "add-cart";
+    }
 
 
 
