@@ -1,6 +1,9 @@
 package com.nischita.FlipBucket;
 
 
+import com.nischita.FlipBucket.models.MarkSheet;
+import com.nischita.FlipBucket.repo.MarkSheetRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +13,8 @@ import java.util.ArrayList;
 @Controller
 public class HomeController {
 
-
+    @Autowired
+    MarkSheetRepository markSheetRepository;
     @GetMapping("/")
     public String homePageView(Model student_data, Model teacher_data){
 
@@ -92,6 +96,20 @@ public class HomeController {
     public String addToCartPage(){
 
         return "add-cart";
+    }
+
+
+
+    @GetMapping("/student-data")
+    public String marksheetPage( Model model){
+
+
+        ArrayList<MarkSheet> all_students_marks =  new ArrayList<>(markSheetRepository.findAll());
+
+        System.out.println(all_students_marks);
+        model.addAttribute("all_students_marks", all_students_marks);
+
+        return "mark-sheet";
     }
 
 
